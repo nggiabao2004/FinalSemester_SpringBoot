@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="https://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{default/layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>Pricing</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link th:href="@{/default/css/pricing.css}" rel="stylesheet">
+</head>
+<body>
+<section layout:fragment="main-content">
+    <div class="container py-5">
+        <h1 class="text-center mb-4">Our Services</h1>
+        <p class="text-center mb-5">We provide professional services to help your business grow</p>
+
+        <div class="row g-4">
+            <div th:each="product : ${products}" class="col-md-4">
+                <div class="card h-100 service-card text-center">
+                    <img th:src="@{${product.image_url}}" class="card-img-top product-thumbnail">
+                    <div class="card-body">
+                        <h4 class="card-title" th:text="${product.name}"></h4>
+                        <h5 class="card-subtitle text-muted" th:text="'$' + ${product.price}"></h5>
+                        <p class="card-text" th:text="${product.description}"></p>
+                        <a class="btn btn-primary" th:href="@{/detail-product(id=${product.id})}">Buy Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<th:block layout:fragment="scripts">
+    <script th:src="@{/default/js/item.js}"></script>
+    <script src="https://kit.fontawesome.com/your-code.js" crossorigin="anonymous"></script>
+</th:block>
+</body>
+</html>

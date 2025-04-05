@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="https://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{default/layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>Detail Product</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+</head>
+<body>
+    <section layout:fragment="main-content">
+        <div class="container py-5">
+            <div class="row">
+                <!-- Hình ảnh sản phẩm -->
+                <div class="col-12 col-md-4 col-lg-4 mb-5">
+                    <img th:src="@{${product.image_url}}" class="img-fluid product-thumbnail">
+                </div>
+
+                <!-- Thông tin sản phẩm -->
+                <div class="col-md-8">
+                    <h3 class="product-title" th:text="${product.name}"></h3>
+                    <strong class="product-price" th:text="'$' + ${product.price}"></strong>
+                    <p class="product-description" th:text="${product.description}"></p>
+
+                    <div class="mt-3">
+                        <a href="#" class="btn btn-primary">Add to Cart</a>
+                        <a href="/services" class="btn btn-secondary">Back to Shop</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function showAlert() {
+            alert("Đã mua thành công");
+        }
+    </script>
+</body>
+</html>

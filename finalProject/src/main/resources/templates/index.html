@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="https://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{default/layout}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+<section layout:fragment="main-content">
+    <!-- Start Hero Section -->
+    <!-- Hero Section -->
+    <section id="home" class="hero text-center">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-start">
+                    <h1>AMERICAN FOOD</h1>
+                    <h2>The Best Taste Food</h2>
+                    <p>Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words.</p>
+                    <a th:href="@{/pricing}" class="btn btn-success">Order Now</a>
+                </div>
+                <div class="col-md-6">
+                    <img th:src="@{default/images/meal.jpg}" alt="Hero Image" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Hero Section -->
+
+
+
+
+
+</section>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="https://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{default/layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>Our Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link th:href="@{/default/css/service.css}" rel="stylesheet">
+</head>
+<body>
+<section layout:fragment="main-content">
+    <div class="container py-5">
+        <h1 class="text-center mb-4">Our Menu</h1>
+        <p class="text-center mb-5">Discover our delicious selection of homemade treats</p>
+
+        <div class="row g-4">
+            <div th:each="product : ${products}" class="col-12">
+                <div class="menu-item d-flex align-items-center">
+                    <!-- Cột trái -->
+                    <div class="menu-content flex-grow-1">
+                        <h3 class="menu-title">
+                            <span th:text="${product.name}"></span>
+                            <strong class="menu-price" th:text="'$' + ${product.price}"></strong>
+                        </h3>
+                        <p class="menu-description" th:text="${product.description}"></p>
+                        <a class="btn btn-primary" th:href="@{/detail-product(id=${product.id})}">Buy Now</a>
+                    </div>
+                    <!-- Cột phải -->
+                    <div class="menu-img">
+                        <img th:src="@{${product.image_url}}" alt="Product Image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>

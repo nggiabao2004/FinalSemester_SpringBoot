@@ -1,0 +1,8 @@
+body {
+    background: url('static/default/images/frame.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.about-us p {
+    color: Black;
+}

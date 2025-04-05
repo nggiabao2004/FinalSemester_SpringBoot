@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="https://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{default/layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>About Us</title>
+</head>
+<body>
+  <section layout:fragment="main-content">
+    <!-- Start Why Choose Us Section -->
+    <div class="container">
+      <h1>About Us</h1>
+
+      <p>Lorem ipsum available but the majority have suffered alteration.</p>
+      <div class="row">
+        <div class="col-md-6 text-start">
+          <p>Let food be thy medicine, medicine be thy food.</p>
+          <p>Lorem lpsum available, but the majority have suffered alteration in some form by injected humour randomise words which don't look even slightly believable. If you are going to use a passage.</p>
+          <p>Lorem lpsum, you need to be sure there isnt anything embarrassing hidden in the middle of text.</p>
+          <a th:href="@{/blog}" class="btn btn-success">Read More</a>
+        </div>
+        <div class="col-md-6">
+          <iframe width="100%" height="300" src="https://www.youtube.com/embed/XkxnKHm4jxw" frameborder="0"></iframe>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <iframe width="100%" height="300" src="https://www.youtube.com/embed/XkxnKHm4jxw" frameborder="0"></iframe>
+        </div>
+        <div class="col-md-6 text-start">
+          <p>Let food be thy medicine, medicine be thy food.</p>
+          <p>Lorem lpsum available, but the majority have suffered alteration in some form by injected humour randomise words which don't look even slightly believable. If you are going to use a passage.</p>
+          <p>Lorem lpsum, you need to be sure there isnt anything embarrassing hidden in the middle of text.</p>
+          <a th:href="@{/blog}" class="btn btn-success">Read More</a>
+        </div>
+      </div>
+    </div>
+    <!-- End Why Choose Us Section -->
+  </section>
+</body>
+</html>

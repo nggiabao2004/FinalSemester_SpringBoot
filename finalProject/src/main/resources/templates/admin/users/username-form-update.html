@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="https://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{admin/layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>Update User</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<section layout:fragment="main-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h1>Update User</h1>
+
+                <!-- 📌 Form cập nhật trạng thái tài khoản -->
+                <form th:action="@{/system/users/update}" method="post">
+                    <input type="hidden" name="username" th:value="${user.username}">
+
+                    <div class="mb-3">
+                        <label class="form-label">Username</label>
+                        <input type="text" class="form-control" th:value="${user.username}" readonly>
+                    </div>
+
+                    <!-- Checkbox bật/tắt tài khoản -->
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" name="enabled" th:checked="${user.enabled}">
+                        <label class="form-check-label">Enable Account</label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Update Account</button>
+                </form>
+
+                <hr>
+
+                <!-- 📌 Form cập nhật mật khẩu -->
+                <form th:action="@{/system/users/update-password}" method="post" onsubmit="return validatePassword()">
+                    <input type="hidden" name="username" th:value="${user.username}">
+
+                    <div class="mb-3">
+                        <label class="form-label">New Password</label>
+                        <input type="password" id="newPassword" name="newPassword" class="form-control">
+
+                    </div>
+
+                    <button type="submit" class="btn btn-warning">Change Password</button>
+                </form>
+
+                <a th:href="@{/system/users/list}" class="btn btn-secondary mt-3">Cancel</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    function validatePassword() {
+        let password = document.getElementById("newPassword").value;
+        if (password.length < 6) {
+            alert("Password must be at least 6 characters!");
+            return false;
+        }
+        return true;
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="https://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{default/layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog</title>
+</head>
+<body>
+<section layout:fragment="main-content">
+    <!-- Start Blog Section -->
+    <section id="blog" class="blog text-center py-5 bg-light">
+        <div class="container">
+            <h1>Blog</h1>
+            <p>Lorem ipsum available but the majority have suffered alteration.</p>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img th:src="@{default/images/hotdogs.jpg}" class="card-img-top" alt="Hotdogs">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body text-start">
+                            <h3>Eat food. Not too much mostly plants.</h3>
+                            <p>Lorem lpsum available, but the majority have suffered alteration in some form by injected humour randomise words which don't look even slightly believable. If you are going to use a passage.</p>
+                            <a th:href="@{/about-us}" class="btn btn-success">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img th:src="@{default/images/hamburger.jpg}" class="card-img-top" alt="Hamburger">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
+</body>
+</html>

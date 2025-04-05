@@ -1,0 +1,25 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.hero {
+    background: url('static/default/images/frame.jpg') no-repeat center center;
+    background-size: cover;
+    height: 100vh;
+}
+
+.about-us, .service, .pricing, .blog {
+    padding: 60px 0;
+}
+
+.about-us h2, .service h2, .pricing h2, .blog h2 {
+    margin-bottom: 30px;
+}
+
+.modal-header {
+    border-bottom: none;
+}
+
+.modal-footer {
+    border-top: none;
+}
